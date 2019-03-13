@@ -1,2 +1,2 @@
-# gradle-kts-example
+# Gradle KTS Example
 Example of Gradle Kotlin DSL

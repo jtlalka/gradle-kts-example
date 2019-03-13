@@ -1,0 +1,23 @@
+import net.tlalka.gradle.config.Config
+
+apply plugin: 'io.gitlab.arturbosch.detekt'
+
+detekt {
+    version = Config.detektVersion
+
+    profile("main") {
+        //config:
+        config = "$rootDir/gradle/plugin/detekt.yml"
+
+        //input:
+        input = "$project.projectDir/src/main/kotlin"
+        filters = ".*/resources/.*,.*/tmp/.*"
+
+        //output:
+        output = "$project.projectDir/build/detekt"
+    }
+}
+
+afterEvaluate {
+    check.dependsOn 'detektCheck'
+}

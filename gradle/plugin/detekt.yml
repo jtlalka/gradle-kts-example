@@ -1,0 +1,52 @@
+failFast: true
+
+build:
+  maxIssues: 0
+  weights:
+    complexity: 1
+    exceptions: 1
+    performance: 1
+    empty-blocks: 1
+    formatting: 1
+    naming: 0
+    style: 0
+    comments: 0
+
+# complexity
+complexity:
+  active: true
+  ComplexMethod:
+    active: true
+    threshold: 10
+    ignoreSingleWhenExpression: true
+    ignoreSimpleWhenEntries: true
+
+# exceptions
+exceptions:
+  active: true
+
+# performance
+performance:
+  active: true
+
+# empty-blocks
+empty-blocks:
+  active: true
+
+# formatting
+formatting:
+  active: true
+
+# naming
+naming:
+  active: true
+
+# style
+style:
+  active: true
+  NewLineAtEndOfFile:
+    active: false
+
+# comments - OFF
+comments:
+  active: false

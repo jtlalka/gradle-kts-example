@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Style -->
+    <color name="colorPrimary">#400063</color>
+    <color name="colorPrimaryDark">#2B0041</color>
+    <color name="colorAccent">#55BB11</color>
+
+    <!-- Launcher -->
+    <color name="app_launcher_foreground">#55BB11</color>
+    <color name="app_launcher_background">#130937</color>
+
+    <!-- Common -->
+    <color name="transparent">#00000000</color>
+
+</resources>

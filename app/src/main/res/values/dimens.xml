@@ -1,0 +1,8 @@
+<resources>
+    <!-- Elements -->
+    <dimen name="content_margin">16dp</dimen>
+    <dimen name="bottom_margin">60dp</dimen>
+
+    <!-- Text -->
+    <dimen name="text_size">40sp</dimen>
+</resources>

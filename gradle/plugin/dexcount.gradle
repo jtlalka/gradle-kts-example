@@ -1,0 +1,6 @@
+apply plugin: 'com.getkeepsafe.dexcount'
+
+dexcount {
+    format = 'tree'
+    includeClasses = false
+}

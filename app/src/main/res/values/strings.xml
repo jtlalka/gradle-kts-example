@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- Application -->
+    <string name="app_name">KTS Example</string>
+
+    <!-- Navigation -->
+    <string name="navigation_hello">Home</string>
+
+    <!-- Hello Fragment -->
+    <string name="hello_message">Hello Kotlin DSL</string>
+    <string name="hello_image">Gradle + Kotlin = Gradle KTS</string>
+
+</resources>

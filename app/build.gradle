@@ -1,0 +1,64 @@
+import net.tlalka.gradle.config.Config
+
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "kotlin-android-extensions"
+}
+
+apply {
+    from "$rootDir/gradle/plugin/detekt.gradle"
+    from "$rootDir/gradle/plugin/dexcount.gradle"
+    from "$rootDir/gradle/plugin/dokka.gradle"
+}
+
+android {
+    compileSdkVersion Config.Android.compileSdkVersion
+    buildToolsVersion Config.Android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion Config.Android.minSdkVersion
+        targetSdkVersion Config.Android.targetSdkVersion
+
+        applicationId "net.tlalka.kts.example"
+        versionName Config.Android.versionName
+        versionCode Config.Android.versionCode
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFile("proguard-rules.pro")
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += "src/main/kotlin"
+        test.java.srcDirs += "src/test/kotlin"
+        androidTest.java.srcDirs += "src/androidTest/kotlin"
+    }
+
+    lintOptions {
+        ignore("GoogleAppIndexingWarning")
+    }
+}
+
+dependencies {
+    implementation Config.Libs.kotlinSdk
+    implementation Config.Libs.androidCore
+    implementation Config.Libs.androidAppCompat
+    implementation Config.Libs.androidConstraintLayout
+    implementation Config.Libs.androidMaterialDesign
+
+    debugImplementation Config.Libs.leakcanaryCore
+    debugImplementation Config.Libs.leakcanaryFragment
+    releaseImplementation Config.Libs.leakcanaryNoOp
+
+    testImplementation Config.UnitTest.junit
+    testImplementation Config.UnitTest.mockito
+
+    androidTestImplementation Config.UiTest.androidRules
+    androidTestImplementation Config.UiTest.androidRunner
+    androidTestImplementation Config.UiTest.androidEspresso
+}
